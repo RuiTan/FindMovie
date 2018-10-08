@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class SplitFile {
 
-    public static final String path = "";
+    public static final String path = "D:/设计模式/";
 
-    public static final String fileName = "movie.txt";
+    public static final String fileName = "movies.txt";
 
     public static final String defaultOutFile = "movie_out_";
 
@@ -19,7 +19,7 @@ public class SplitFile {
 
     private Scanner sc;
 
-    public static final int DefaultLines = 1000;
+    public static final int DefaultLines = 8 * 50000;
 
     private FileWriter CreateFile(String fn){
 
@@ -77,7 +77,7 @@ public class SplitFile {
                 // 往文件里面写
                 String line = sc.nextLine();
                 try {
-                    os.write(line);
+                    os.write(line + "\n");
                 } catch (IOException e) {
                     System.out.println("SDF error : Cannot write into file \'" + path + fileName + "\'!");
                     e.printStackTrace();
